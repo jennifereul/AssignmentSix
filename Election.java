@@ -78,7 +78,8 @@ public class Election {
     public void auditElection() {
         List<Map.Entry<String, Integer>> sortedCandidates = new ArrayList<>(candidates.entrySet());
         sortedCandidates.sort(new EntryComparator());
-        for (Map.Entry<String, Integer> entry : sortedCandidates) {
+        for (int i = 0; i < sortedCandidates.size(); i++) {
+            Map.Entry<String, Integer> entry = sortedCandidates.get(i);
             System.out.println(entry.getKey() + " - " + entry.getValue());
         }
     }
